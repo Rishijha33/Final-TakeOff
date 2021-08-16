@@ -1,0 +1,21 @@
+.spacer{
+    flex:1 1 auto;
+}
+
+.fab{
+    width:fit-content;
+    height: fit-content;
+}
+.myClass{
+    background: url("../../../assets/airplane4.jpg") no-repeat fixed center ;
+    
+   
+    /* position: absolute; */
+    
+     width: 100%; 
+     /* height: auto; */
+     color: black;
+}
+/* body{
+    background: url("../../../assets/airplane4.jpg") no-repeat fixed center ;
+} */

@@ -1,0 +1,51 @@
+<app-user-nav></app-user-nav>
+
+
+<body>
+    
+
+    <div class="container mt-2">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Booking Id</th>
+                    <th>Flight Id</th>
+                    <th>User Id</th>
+                    <th>Class</th>    
+                    <th>Status</th>    
+                    <th>Number of Passengers</th>
+                    <th>Refund Amount</th>    
+                    <th>Total Cost</th>    
+                    <th>Action</th> 
+                      
+                                    
+                </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let b of bookingList;">  
+                    <td> {{b.user.firstName}} </td>            
+                    <td> {{b.bookingId}} </td>
+                    <td> {{b.flight.flightId}} </td>
+                    <td> {{b.user.userId}} </td>  
+                    <td> {{b.travelClass}} </td>     
+                    <td> {{b.bookingStatus}} </td> 
+                    <td> {{b.noOfPassengers}} </td>     
+                    <td>{{b.refundAmount}}</td>
+                    <td> {{b.totalCost}} </td>   
+                    <td><button class="btn btn-danger" [hidden] = "bremove" (click) = "cancelBooking(b.bookingId)">Cancel Booking</button></td>                             
+                    <td><button (click) = "remove(b.bookingStatus)" [hidden] = "!bremove"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+    <!-- bookingId:number=0;
+    flight: Flight;
+    user: User;
+    bookingDate:string="";
+    travelClass: string="";
+    bookingStatus: string="";
+    noOfPassengers: number=0;
+    totalCost: number=0;
+    refundAmount: number=0; -->refundAmount: number=0; -->

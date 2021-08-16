@@ -1,0 +1,40 @@
+<!-- <p>user </p> -->
+<div><app-home-dashboard></app-home-dashboard></div>
+
+
+
+<body>
+
+    <div class="login-form">
+        <h1>Login</h1>
+    
+        <div class="txtb">
+          <input type="email" placeholder="email" [(ngModel)]="email" required>
+         
+        </div>
+    
+        <div class="txtb">
+          <input type="password" placeholder="Password" [(ngModel)]="password">
+          
+        </div>
+        <div  *ngIf = "bol" class="bottom-text" style="color: red;">Please enter valid credentials</div>
+        <input type="submit" class="logbtn" value="Login" (click)="loginUser()">
+        
+        <div class="bottom-text">
+          Don't have account? <a href= "userReg">Sign up</a>
+        </div>
+
+        <div class="bottom-text">
+            You are an admin?
+            <a href = "/adminLogin" routerLinkActive="active">Click here</a>
+        </div>
+    
+    </div>
+ 
+ 
+          
+</body>
+
+
+
+

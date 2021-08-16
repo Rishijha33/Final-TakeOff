@@ -1,0 +1,50 @@
+<div><app-user-nav></app-user-nav></div>
+
+<body>
+    
+    <div class="booking-form-box ">
+   
+    <div class="container booking-form">
+        <h1>Enter Payment Details Here</h1>
+        <form [formGroup]="paymentForm"  (ngSubmit)="onSubmit()">
+            <br>
+            <div class="form-group input-grp">
+                <label for="bookingId">Booking ID</label>
+                <br>
+                <label class="form-control input-grp" for="bookingId">{{bookingId}}</label>
+            </div>
+            <br>
+    
+    
+            <div class="form-group input-grp">
+                <label for="cardHolderName">Card Holder Name</label>
+                <input formControlName="cardHolderName" type="text" class="form-control" id="cardHolderName" placeholder="Card Holder Name" />
+            </div>
+            <br>
+    
+            <div class="form-group input-grp">
+                <label for="cardNumber">Card Number</label>
+                <input formControlName="cardNumber" type="text" class="form-control" id="cardNumber" placeholder="Card Number" />
+            </div>
+            <br>
+            <div class="form-group input-grp">
+                <label >CVV</label>
+                <input  type="number" class="form-control" placeholder="CVV" />
+            </div>
+    
+            <div class="form-group input-grp">
+                <label >Expiry date</label>
+                <input type="text" class="form-control" placeholder="MM/yy" />
+            </div>
+    
+            <div><label class="form-group input-grp" for="totalCost"><h3>Amount</h3> </label>
+                <label class="form-group" for="totalCost"><h2>{{totalCost}}</h2></label>
+            </div>
+          
+      
+            <button class="btn btn-primary flight" type="submit" id="makePayment">PAY</button>
+    
+        </form>
+        </div>
+       </div>
+    </body>    

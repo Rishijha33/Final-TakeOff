@@ -1,0 +1,39 @@
+<body>
+    
+
+    <div class="container mt-2">
+        <table class="table table-bordered table-hover">
+            <thead  >
+                <tr>
+                    <th >FLIGHT NO</th>
+                    <th>FLIGHT NAME</th>
+                     <th>SOURCE</th>
+                    <th>DESTINATION</th>
+                    <th>DEPARTURE DATE & TIME</th>
+                    <th>ARRIVAL DATE & TIME</th>
+                    <th>ECONOMY SEATS</th>
+                    <th>BUSINESS SEATS</th>
+                    <th>ECONOMY SEAT COST</th>
+                    <th>BUSINESS SEAT COST</th> 
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let f of flightList">
+                    <td>{{f.flightId}}</td>
+                    <td>{{f.flightName}}</td>
+                    <td>{{f.source}}</td>
+                    <td>{{f.destination}}</td>
+                    <td>{{f.departureDate}} {{f.departureTime}}</td>
+                    <td>{{f.arrivalDate}} {{f.arrivalTime}}</td>
+                    <td>{{f.economicSeats}}</td>
+                    <td>{{f.businessSeats}}</td>
+                    <td>{{f.economyCost}}</td>
+                    <td>{{f.businessCost}}</td> 
+                   
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    
+    </body>

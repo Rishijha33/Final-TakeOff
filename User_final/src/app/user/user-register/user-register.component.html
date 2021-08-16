@@ -1,0 +1,86 @@
+<app-home-dashboard></app-home-dashboard>
+    <body>
+        
+  
+    <form [formGroup]="userForm" class="login-form" (ngSubmit)="onSubmit()">
+        <br>
+        <div  >
+            <label for="title">Title</label>
+            <select   name="title"  formControlName = "title">
+                <option value="Mr">Mr.</option>
+                <option value="Ms">Ms.</option>
+            </select>
+            <div *ngIf="submitted && userForm.controls.title.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.title.errors.required">Title is required</div>														
+              </div>
+        </div>
+        <br>
+        <div  class="txtb">
+            <label for="firstName">First Name</label>
+            <input formControlName="firstName" type="text" class="form-control" id="firstName" placeholder="First Name"/>
+            <div *ngIf="submitted && userForm.controls.firstName.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.firstName.errors.required">First Name is required</div>														
+              </div>
+        </div>
+        <br>
+        <div  class="txtb">
+            <label for="lastName">Last Name</label>
+            <input formControlName="lastName" type="text" class="form-control" id="lastName" placeholder="Last Name"/>
+            <div *ngIf="submitted && userForm.controls.lastName.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.lastName.errors.required">Last Name is required</div>														
+              </div>
+        </div>
+        <br>
+   
+        <div  class="txtb">
+            <label for="email">Email</label>
+            <!-- <input type="email" name="input" ng-model="text" required> -->
+            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email">
+            <div *ngIf="submitted && userForm.controls.email.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.email.errors.required">Email is required</div>
+               
+        </div>
+    </div>
+        
+        <br>
+        <div  class="txtb">
+            <label for="password">password</label>
+            <input formControlName="password" type="password" class="form-control"  placeholder="password"/>
+            <div *ngIf="submitted && userForm.controls.password.errors" class="error">		
+                <div class="text-danger" *ngIf="userForm.controls.password.errors.minLength">Password is required</div>														
+                <div class="text-danger" *ngIf="userForm.controls.password.errors.required">Password is required</div>	
+               
+                          </div>                    
+              </div>
+  
+        <br>
+        <div  class="txtb">
+            <label for="password">Confirm password</label>
+            <input formControlName="confirmPassword" type="password"  placeholder="password"/>
+            <div *ngIf="submitted && userForm.controls.confirmPassword.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.confirmPassword.errors.required">Confirm Password is required</div>
+                <div class="text-danger" *ngIf="userForm.controls.confirmPassword.errors.confirmPasswordValidator">Passsword and
+                    Confirm Password didn't match. </div>										
+              </div>
+        </div>
+        <br>
+        <div  class="txtb">
+            <label for="phoneNumber">Phone Number</label>
+            <input formControlName="phoneNumber" type="number" class="form-control" id="phoneNumber" placeholder="Contact Number"/>
+            <div *ngIf="submitted && userForm.controls.phoneNumber.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.phoneNumber.errors.required">Phone Number is required</div>														
+              </div>
+        </div>
+        <br>
+        <div class="txtb">
+            <label for="dob">Date Of Birth</label>
+            <input formControlName="dob" type="date" class="form-control" id="dob" placeholder="Date of birth"/>
+            <div *ngIf="submitted && userForm.controls.dob.errors" class="error">														
+                <div class="text-danger" *ngIf="userForm.controls.dob.errors.required">Date of Birth is required</div>														
+              </div>
+        </div>
+
+        <br>
+       <div > <button class="logbtn" type="submit">SUBMIT</button></div>
+    </form>
+</body>

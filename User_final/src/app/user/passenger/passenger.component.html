@@ -1,0 +1,48 @@
+<app-user-nav></app-user-nav>
+
+<body>
+    <div class="booking-form-box ">
+    <!-- <div  *ngFor="let i of arr(num).fill(1)"> -->
+        <div>
+    <div class="container booking-form" [hidden] = addButton>
+        <form [formGroup]="passengerForm"  (ngSubmit)="onSubmit()">
+            <br>
+            <div class="form-group input-grp">
+                <label for="bookingId">Booking ID  </label>
+                <br>
+                <label>{{bookingId}}</label>
+            </div> 
+            <br>
+    
+    
+            <div class="form-group input-grp">
+                <label for="Name">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="Name" placeholder="Name" />
+            </div>
+            <br>
+    
+            <div class="form-group input-grp">
+                <label for="age">Age</label>
+                <input formControlName="age" type="number" class="form-control" id="age" placeholder="age" />
+            </div>
+            <br>
+            <div class="form-group input-grp">
+                <label for="gender">Gender</label>
+                <select name="gender" formControlName="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <br>
+            
+    
+            <button class="btn btn-primary flight" type="submit" id="addPassengers" [hidden] = addButton>Add Passenger</button>
+    
+        </form>
+    </div> 
+        <button class="btn btn-primary flight" [hidden] = count (click) = toPayment()>Proceed to Payment </button>
+        </div>
+    </div>
+    </body>
+    
+    <router-outlet></router-outlet>

@@ -1,0 +1,36 @@
+<body>
+    
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-7 mb-3 booking-form" >
+                <input class="form-control" type="number" [(ngModel)]="flightId" placeholder="Enter flight ID">
+            </div>
+            <div class="col-3">
+                <button class="btn btn-primary flight"  (click)="onSearch()">SEARCH</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="container mt-2">
+        <table class="table table-hover table-bordered " [hidden] = "viewTable">
+            <thead>
+                <tr>
+                    <th>FLIGHT ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  >
+                    <td>{{flight.flightId}}</td>
+                
+                    <td> <button class=" btn btn-primary flight" (click)="deleteRow(flight.flightId)">Delete</button></td>
+                  
+                       
+                </tr>
+            </tbody>
+        </table>
+        <div [hidden] = "deleted" style="color: red;"><h2>Flight deleted</h2></div>
+    </div> 
+    </body>

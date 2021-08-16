@@ -1,0 +1,118 @@
+<body>
+
+    <div class="booking-form-box">
+
+        <div class="container" class="booking-form">
+            <h1>Add Flight Here</h1>
+            <form [formGroup]="addFlight1"  (ngSubmit)="onSubmit()">
+                <br>
+                <div class="input-grp">
+                    <label for="flightName">ENTER FLIGHT NAME</label>
+                    <input formControlName="flightName" type="text" class="form-control" id="flightName"
+                        placeholder="FlightName" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="source">ENTER SOURCE</label>
+                    <select class="form-control" id="source"   formControlName="source"  placeholder="Source">
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Banglore">Banglore</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="destination">ENTER DESTINATION</label>
+                    <select class="form-control" id="destination" formControlName="destination"  placeholder="Destination">
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Banglore">Banglore</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="departureDate">ENTER DEPARTURE DATE</label>
+                    <input formControlName="departureDate" type="date" class="form-control select-date"
+                        id="departureDate" placeholder="DepartureDate" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="departureDate">ENTER DEPARTURE TIME</label>
+                    <input formControlName="departureTime" type="text" class="form-control" id="departureTime"
+                    placeholder="DepartureTime: 00:00" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="arrival">ENTER ARRIVAL DATE</label>
+                    <input formControlName="arrivalDate" type="date" class="form-control select-date" id="arrivalDate"
+                        placeholder="ArrivalDate" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="departure">ENTER ARRIVAL TIME</label>
+                    <input formControlName="arrivalTime" type="text" class="form-control" id="arrivalTime"
+                        placeholder="ArrivalTime: 00:00" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="economicSeats">ENTER ECONOMY SEATS</label>
+                    <input formControlName="economicSeats" type="number" class="form-control" id="economicSeats"
+                        placeholder="EconomicSeats" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="businessSeats">ENTER BUSINESS SEATS</label>
+                    <input formControlName="businessSeats" type="number" class="form-control" id="businessSeats"
+                        placeholder="BusinessSeats" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="economyCost">ENTER ECONOMY COST</label>
+                    <input formControlName="economyCost" type="number" class="form-control" id="economyCost"
+                        placeholder="EconomyCost" />
+                </div>
+                <br>
+                <div class="input-grp">
+                    <label for="businessCost">ENTER BUSINESS COST</label>
+                    <input formControlName="businessCost" type="number" class="form-control" id="businessCost"
+                        placeholder="BusinessCost" />
+                </div>
+                <br>
+                <div [hidden] = "added" style="color: green;"><h2>Flight added </h2></div>
+                
+                <div class="input-grp">
+                    <button class="btn btn-primary flight">ADD FLIGHT</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+    <!-- <label for="destination">ENTER DESTINATION</label>
+    <select class="form-control" id="destination" formControlName="destination"  placeholder="Destination">
+        <option value="Bhopal">Bhopal</option>
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Banglore">Banglore</option>
+        <option value="Chennai">Chennai</option>
+    </select>
+
+
+    <div class="form-group">
+        <label  for="source">ENTER SOURCE</label>
+                <select class="form-control" id="source"   formControlName="source"  placeholder="Source">
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+    </div> -->
