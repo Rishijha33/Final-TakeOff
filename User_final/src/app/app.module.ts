@@ -29,7 +29,6 @@ import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { SearchFlightComponent } from './user/search-flight/search-flight.component';
-import { BookFlightComponent } from './user/book-flight/book-flight.component';
 import { PassengerComponent } from './user/passenger/passenger.component';
 import { PaymentComponent } from './user/payment/payment.component';
 import { ViewBookingComponent } from './user/view-booking/view-booking.component';
@@ -54,7 +53,7 @@ import { ViewBookingComponent } from './user/view-booking/view-booking.component
     ContactUsComponent,
     AboutUsComponent,
     SearchFlightComponent,
-    BookFlightComponent,
+
     PassengerComponent,
     PaymentComponent,
     ViewBookingComponent,

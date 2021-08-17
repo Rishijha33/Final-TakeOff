@@ -25,7 +25,7 @@ export class SearchFlightComponent implements OnInit {
   passengerForm: FormGroup;
   flightList: Flight[]=[];
   flightSearched: boolean = true;
-  b2:Booking;
+  b2:any;
   submitted: boolean = false;
   b1:any
    = {
@@ -41,7 +41,7 @@ export class SearchFlightComponent implements OnInit {
     this.userId = sessionStorage.getItem("userId");
     this.flightId = sessionStorage.getItem("flightId");
     console.log("userId:" + sessionStorage.getItem("userId"));
-    console.log("flightId:" + sessionStorage.getItem("flightId"));
+    console.log("flightId:" +sessionStorage.getItem("flightId"));
     
   }
 
@@ -63,10 +63,7 @@ export class SearchFlightComponent implements OnInit {
 
   onSearch()
   {
-    // this.sf.source=this.source;
-    // this.sf.destination=this.destination;
-    // this.sf.departureDate=this.departureDate;
-    // this.sf.travelClass=this.travelClass;
+ 
     if(this.searchFlight.invalid)
     {
      
@@ -86,36 +83,20 @@ export class SearchFlightComponent implements OnInit {
     console.log(this.sf);
 
     this.bookingService.searchFlight1(this.sf).subscribe((data: any) =>{
-      // this.router.navigateByUrl("displayFlights");
+  
       this.flightList = data;
       this.flightSearched=!this.flightSearched;
-      console.log(this.sf);
-      console.log("flight list");
-      console.log(this.flightList);
-      localStorage.setItem('noOfPassengers',this.searchFlight.value.noOfPassengers);
+    
       
 
       
     });
+    console.log("flight list");
+    console.log(this.flightList);
+    localStorage.setItem('noOfPassengers',this.searchFlight.value.noOfPassengers);
   }
 }
 
-  onSubmit() {
-    console.log("SUBMIT");
-    // if (this.passengerForm.invalid) {
-    //   return;
-    // }
-  
-  //   this.bookingService.addPassenger(this.passengerForm.value).subscribe(data => {
-  //   //this.userForm.reset(this.userForm.value);
-  //   //(<HTMLFormElement>document.getElementById("Login")).reset();
-  //   // this.userForm.reset();
-  //  //this.router.navigate(['makePayment']);
-  
-  //   }
-  
-  //   );
-   }
 
   getDetails(flightId:number){
     if(this.searchFlight.invalid)
@@ -123,17 +104,17 @@ export class SearchFlightComponent implements OnInit {
       this.searchFlight.reset();
       
     }
-    this.userId = localStorage.getItem('userId')
-    this.flightId = flightId;
+
+
+
     this.b1 = {
       "travelClass":this.searchFlight.value.travelClass,
-      "bookingDate":"",
       "bookingStatus":"not confirmed",
       "noOfPassengers":this.searchFlight.value.noOfPassengers,
       "totalCost": 0,
       "refundAmount":0,
       "user": {
-        "userId": this.userId,
+        "userId": localStorage.getItem('userId'),
         "email": "",
         "password": "",
         "title": "",
@@ -143,7 +124,7 @@ export class SearchFlightComponent implements OnInit {
         "dob": ""
     },
     "flight": {
-      "flightId": this.flightId,
+      "flightId":flightId,
       "adminId": 0,
       "flightName": "",
       "source": "",
@@ -166,17 +147,16 @@ export class SearchFlightComponent implements OnInit {
     localStorage.setItem('flightId',this.flightId);
 
     this.bookingService.addBooking(this.b1).subscribe((data:any)=>
-    {this.b2 = data
+    {this.b2 = data;
       console.log(this.b2);
- 
-
-    
-   
-    });
-    localStorage.setItem('bookingId',this.b2.bookingId.toString());
+      localStorage.setItem('bookingId',this.b2.bookingId.toString());
     localStorage.setItem('totalCost', this.b2.totalCost.toString());
     console.log(localStorage.getItem('bookingId'));
-    this.router.navigateByUrl("passengers")
+  
+      this.router.navigateByUrl("passengers")
+
+    });
+    
       
       
       

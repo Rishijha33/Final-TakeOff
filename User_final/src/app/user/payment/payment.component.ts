@@ -33,22 +33,23 @@ export class PaymentComponent implements OnInit {
 
   ngOnInit(): void {
     this.paymentForm = this.formBuilder.group({
-      // transactionId:['',Validators.required],
-      bookingId: ['',Validators.required],
       cardHolderName: ['',Validators.required],
       cardNumber: ['',Validators.required],
-      // totalCost: ['',Validators.required]
+      cvv: ['',Validators.required],
+      expiryDate: ['',Validators.required],
+    
   }
   );
   }
 
   onSubmit() {
     console.log("SUBMIT");
-    // if (this.paymentForm.invalid) {
-    //   console.log("hoho");
-      
-    //   return;
-    // }
+    this.submitted = true
+    if(this.paymentForm.invalid)
+    {
+      return;
+    }
+  
 
     this.p1 ={"booking":{
       "bookingId": this.bookingId,

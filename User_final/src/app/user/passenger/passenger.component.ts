@@ -13,6 +13,8 @@ export class PassengerComponent implements OnInit {
   pass:any = localStorage.getItem('noOfPassengers'); // to get the no. of passengers
   noOfpass:number = parseInt(this.pass);
 
+  submitted:boolean = false;
+
   arr:Array<number> = [];
   num:number = this.noOfpass; 
 
@@ -43,11 +45,9 @@ export class PassengerComponent implements OnInit {
 
 
     this.passengerForm = this.formBuilder.group({
-      bookingId:['',Validators.required],
       name: ['',Validators.required],
       age: ['',Validators.required],
       gender: ['',Validators.required],
-      seatNo: ['',Validators.required]
      
   
       
@@ -67,7 +67,13 @@ export class PassengerComponent implements OnInit {
 
     
   onSubmit() {
-    console.log("SUBMIT");
+    this.submitted = true;
+    if (this.passengerForm.invalid)
+    { 
+      return;
+  }
+
+
     this.passenger={
       "booking":{
         "bookingId": this.bookingId,
@@ -119,7 +125,7 @@ export class PassengerComponent implements OnInit {
       this.passengerForm.reset();
       this.counter+=1;
       console.log(this.counter);
-      
+      this.submitted = false;
       if(this.counter == this.noOfpass)
       {
         this.addButton = true;
@@ -129,7 +135,7 @@ export class PassengerComponent implements OnInit {
       }
     });
 
-    
+
    }
 
 

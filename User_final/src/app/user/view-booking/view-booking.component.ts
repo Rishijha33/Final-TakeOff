@@ -47,7 +47,7 @@ bremove:boolean = false;
       location.reload();
     });
 
-    alert(this.msg)
+    alert("Booking Deleted the refund will be credited in 3 business days")
   }
 
   remove(bookingStatus:string)

@@ -13,12 +13,7 @@ export class FlightListComponent implements OnInit {
   constructor(private addFlightService: AddFlightService) { }
 
   ngOnInit(): void {
-    // this.addFlightService.getFlightList().subscribe((data:any)=>
-    //     {
-    //         console.log(data);
-    //         this.flight=data;
-    //         console.log(this.flight);
-    //     })
+ 
     this.getFlightList();
   }
   public getFlightList(){
