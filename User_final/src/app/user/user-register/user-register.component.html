@@ -34,7 +34,7 @@
    
         <div  class="txtb">
             <label for="email">Email</label>
-            <!-- <input type="email" name="input" ng-model="text" required> -->
+          
             <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email">
             <div *ngIf="submitted && userForm.controls.email.errors" class="error">														
                 <div class="text-danger" *ngIf="userForm.controls.email.errors.required">Email is required</div>
